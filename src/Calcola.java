@@ -5,7 +5,6 @@ import java.io.IOException;
 
 public class Calcola {
 
-	// Buffer per le write
 	int next;
 	double dx=0.0, dy=0.0, dz=0.0;
 	double px=0.0, py=0.0, pz=0.0;
@@ -78,11 +77,13 @@ public class Calcola {
 							//System.out.println(f);
 							
 							// tempo in minuti
-							time += (Math.sqrt(dx*dx + dy*dy)) / (f-(f/100)*20);
+							time += (Math.sqrt(dx*dx + dy*dy)) / f;
+							time += 0.1;
 						}
 						else
 							// tempo in minuti
-							time += (Math.sqrt(dx*dx + dy*dy)) / (f-(f/100)*20);
+							time += (Math.sqrt(dx*dx + dy*dy)) / f;
+							time += 0.1;
 						
 					}
 					
@@ -107,11 +108,13 @@ public class Calcola {
 							f = readtok(fn);
 							
 							// tempo in minuti
-							time += (Math.sqrt(dx*dx + dy*dy)) / (f-(f/100)*30);
+							time += (Math.sqrt(dx*dx + dy*dy)) / f;
+							time += 0.1;
 						}
 						else
 							// tempo in minuti
-							time += (Math.sqrt(dx*dx + dy*dy)) / (f-(f/100)*30);	
+							time += (Math.sqrt(dx*dx + dy*dy)) / f;
+							time += 0.1;
 					}
 				}
 			}
