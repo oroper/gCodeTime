@@ -15,6 +15,7 @@ public class Calcola {
 		double y = 0.0;
 		double z = 200;
 		double f = 1;
+		double cm3 = 0.0;
 		double tmp;
 		dx=0.0; dy=0.0; dz=0.0;
 		px=0.0; py=0.0; pz=0.0;
@@ -125,6 +126,16 @@ public class Calcola {
 				next = fn.read();
 				c = (char)next;
 			}
+			
+			else if(c.equals('(')){
+				
+				// se non legge un numero deve passare avanti
+				tmp = readtok(fn);
+				
+				if (tmp > 0)
+					cm3 = tmp;
+				
+			}
 		}	
 		
 		fn.close();
@@ -154,7 +165,7 @@ public class Calcola {
 		while( (t = fd.read() )> 0) {
 			h=(char)t;
 			// Se a capo, termine del file o spazio
-			if( h.equals('\n') || h.equals('\0') || h.equals(' ')){
+			if( h.equals('\n') || h.equals('\0') || h.equals(' ') || h.equals('X')){
 				// non inserire il carattere letto, stringa già terminata all'iterazione precedente
 				break;
 			}
