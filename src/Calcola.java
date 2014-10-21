@@ -131,6 +131,7 @@ public class Calcola {
 				
 				// se non legge un numero deve passare avanti
 				tmp = readtok(fn);
+
 				
 				if (tmp > 0)
 					cm3 = tmp;
